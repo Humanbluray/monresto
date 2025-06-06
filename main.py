@@ -10,14 +10,14 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.title = "Pay 1.0 - 2025"
     page.fonts = {
-        "PPL": "assets/fonts/Poppins-light.ttf",
-        "PPM": "assets/fonts/Poppins-Medium.ttf",
-        "PPI": "assets/fonts/Poppins-Italic.ttf",
-        "PPB": "assets/fonts/Poppins-Bold.ttf",
-        "PSB": "assets/fonts/Poppins-SemiBold.ttf",
-        "PBL": "assets/fonts/Poppins-Black.ttf",
-        "PPR": "assets/fonts/Poppins-Regular.ttf",
-        "PEB": "assets/fonts/Poppins-ExtraBold.ttf",
+        "PPL": "fonts/Poppins-light.ttf",
+        "PPM": "fonts/Poppins-Medium.ttf",
+        "PPI": "fonts/Poppins-Italic.ttf",
+        "PPB": "fonts/Poppins-Bold.ttf",
+        "PSB": "fonts/Poppins-SemiBold.ttf",
+        "PBL": "fonts/Poppins-Black.ttf",
+        "PPR": "fonts/Poppins-Regular.ttf",
+        "PEB": "fonts/Poppins-ExtraBold.ttf",
     }
 
     # Routes
@@ -59,7 +59,7 @@ def main(page: ft.Page):
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 8080))
     ft.app(
-        main, assets_dir="assets", route_url_strategy="default", port=port,
+        target=main, assets_dir="assets", route_url_strategy="default", port=port,
         view=ft.AppView.WEB_BROWSER
     )
 
