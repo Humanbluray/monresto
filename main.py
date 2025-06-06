@@ -10,14 +10,14 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.title = "Pay 1.0 - 2025"
     page.fonts = {
-        "PPL": "fonts/Poppins-light.ttf",
-        "PPM": "fonts/Poppins-Medium.ttf",
-        "PPI": "fonts/Poppins-Italic.ttf",
-        "PPB": "fonts/Poppins-Bold.ttf",
-        "PSB": "fonts/Poppins-SemiBold.ttf",
-        "PBL": "fonts/Poppins-Black.ttf",
-        "PPR": "fonts/Poppins-Regular.ttf",
-        "PEB": "fonts/Poppins-ExtraBold.ttf",
+        "PPL": "/fonts/Poppins-light.ttf",
+        "PPM": "/fonts/Poppins-Medium.ttf",
+        "PPI": "/fonts/Poppins-Italic.ttf",
+        "PPB": "/fonts/Poppins-Bold.ttf",
+        "PSB": "/fonts/Poppins-SemiBold.ttf",
+        "PBL": "/fonts/Poppins-Black.ttf",
+        "PPR": "/fonts/Poppins-Regular.ttf",
+        "PEB": "/fonts/Poppins-ExtraBold.ttf",
     }
 
     # Routes
