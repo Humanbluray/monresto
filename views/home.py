@@ -12,7 +12,7 @@ class Home(ft.View):
         super().__init__(
             route=f'/home/{user_id}', horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             vertical_alignment=ft.MainAxisAlignment.CENTER, bgcolor=PAGE_BG_COLOR,
-            padding=10
+            padding=0
         )
         self.user_id = user_id
         self.page = page
@@ -26,62 +26,32 @@ class Home(ft.View):
             padding=ft.padding.only(10, 10, 10,10), bgcolor='white', border_radius=10,
             content=ft.Row(
                 controls=[
-                    ft.Image(src=logo_url, width=50, height=50),
                     ft.Row(
                         controls=[
-                            ft.Container(
-                                padding=10, border_radius=12, bgcolor='#f0f0f6',
+                            ft.Text("Table", size=24, font_family='PPB'),
+                            ft.Text("Table", size=24, font_family='PPB', color=SECOND_COLOR),
+                        ], spacing=0
+                    ),
+                    ft.PopupMenuButton(
+                        content=ft.Container(
+                            content=ft.Icon(ft.Icons.LOCAL_RESTAURANT_OUTLINED, color="grey")
+                        ),
+                        items=[
+                            ft.PopupMenuItem(
+                                content=ft.Text(f"{self.user_infos['username']}", size=12, font_family="PPM")
+                            ),
+                            ft.Divider(height=1, thickness=1),
+                            ft.PopupMenuItem(
                                 content=ft.Row(
                                     controls=[
-                                        ft.Row(
-                                            controls=[
-                                                ft.Icon(ft.Icons.FOOD_BANK_OUTLINED, size=24,
-                                                        color=ft.Colors.BLACK38),
-                                                self.shop_name,
-                                            ], alignment=ft.MainAxisAlignment.CENTER
-                                        ),
-                                        ft.Container(
-                                            bgcolor=ft.Colors.GREEN_50, border=ft.border.all(1, 'green'),
-                                            border_radius=16,
-                                            padding=ft.padding.only(10, 3, 10, 3),
-                                            content=ft.Row(
-                                                controls=[
-                                                    ft.Icon(ft.Icons.CHECK_CIRCLE, size=16, color='green'),
-                                                    ft.Text('Actif', size=12, font_family='PPM', color='green')
-                                                ], alignment=ft.MainAxisAlignment.CENTER
-                                            )
-                                        ),
-                                        # ft.Row(
-                                        #     controls=[
-                                        #         ft.Icon(ft.Icons.CALENDAR_MONTH_OUTLINED, color=ft.Colors.BLACK45),
-                                        #         ft.Text("Fin abonnement", size=12, color=ft.Colors.BLACK45),
-                                        #         self.fin_abonnement
-                                        #     ]
-                                        # )
+                                        ft.Icon(ft.Icons.CALENDAR_MONTH_OUTLINED),
+                                        ft.Text("Abonnement", size=16, font_family='PPM')
                                     ]
                                 )
-                            ),
-
-                        ]
-                    ),
-                    ft.Row(
-                        controls=[
-                            ft.Container(
-                                padding=10, border_radius=16, bgcolor=PAGE_BG_COLOR,
-                                # border=ft.border.all(1, "grey"),
-                                content=ft.Row(
-                                    [
-                                        ft.Icon(ft.Icons.ACCOUNT_CIRCLE, size=24, color=ft.Colors.BLACK87),
-                                        self.user_account,
-                                     ], alignment=ft.MainAxisAlignment.CENTER, spacing=5
-                                ),
-
-                            ),
-
-                            ft.VerticalDivider(width=10, color=ft.Colors.TRANSPARENT),
-                            MyCtButton(ft.Icons.LOGOUT, 'grey', None)
+                            )
                         ]
                     )
+
                 ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN
             )
         )
