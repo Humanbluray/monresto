@@ -58,5 +58,8 @@ def main(page: ft.Page):
 
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 8080))
-    ft.app(main, assets_dir="assets", route_url_strategy="default", port=port)
+    ft.app(
+        main, assets_dir="assets", route_url_strategy="default", port=port,
+        view=ft.AppView.WEB_BROWSER
+    )
 
